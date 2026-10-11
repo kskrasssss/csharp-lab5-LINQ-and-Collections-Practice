@@ -1,98 +1,99 @@
+🇬🇧 **English** | 🇺🇦 [Українська](README.uk.md)
+
 # 🏦 Bank Accounts Toolkit
 
-Консольний застосунок на **C# / .NET**, який демонструє роботу з узагальненими типами, колекціями та LINQ на прикладі банківських рахунків.
+A **C# / .NET** console application that demonstrates generics, collections and LINQ using bank accounts as the domain.
 
 ![C#](https://img.shields.io/badge/C%23-12-239120?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-6.0%2B-512BD4?logo=dotnet&logoColor=white)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 
-## 📖 Про проєкт
+## 📖 About
 
-Програма складається з п'яти незалежних модулів, які запускаються з головного меню:
+The program consists of five independent modules launched from a main menu:
 
-| Модуль | Що робить |
-|--------|-----------|
-| **Storage** | Універсальне сховище `StorageManager<T>`: додавання, видалення, пошук за ключем і фільтрація за довільною умовою. Результат фільтрації повертається лише для читання |
-| **Lists** | Читає два списки слів із файлу, знаходить спільні слова, розвертає їх порядок і записує результат у файл по 7 слів у рядку |
-| **Bi-directional map** | Двонаправлений словник: пошук і за ключем, і за значенням, з гарантією узгодженості обох сторін |
-| **LINQ queries** | Фільтрація, сортування, пагінація, пошук першого елемента та екстремумів |
-| **LINQ aggregation** | Групування, підсумки по групах, з'єднання рахунків із відділеннями банку |
+| Module | What it does |
+|--------|--------------|
+| **Storage** | A generic `StorageManager<T>` container: add, remove, find by key and filter by an arbitrary condition. Filtering returns a read-only result |
+| **Lists** | Reads two word lists from a file, finds the common words, reverses their order and writes the result to a file, 7 words per line |
+| **Bi-directional map** | A two-way dictionary: lookup by key and by value, with guaranteed consistency of both sides |
+| **LINQ queries** | Filtering, sorting, pagination, first-match search and extremum search |
+| **LINQ aggregation** | Grouping, per-group totals, and joining accounts with bank branches |
 
-## 🛠 Технології
+## 🛠 Tech stack
 
-- **C#** та **.NET 6.0+**
-- **Generics** та делегати (`Func<T, bool>`)
-- **Колекції:** `List<T>`, `Dictionary<TKey, TValue>`, `HashSet<T>`, `IReadOnlyList<T>`
+- **C#** and **.NET 6.0+**
+- **Generics** and delegates (`Func<T, bool>`)
+- **Collections:** `List<T>`, `Dictionary<TKey, TValue>`, `HashSet<T>`, `IReadOnlyList<T>`
 - **LINQ:** `Where`, `OrderBy`, `Skip/Take`, `GroupBy`, `Join`, `GroupJoin`, `Aggregate`
-- **Файловий ввід/вивід:** `System.IO`
-- **Git / GitHub** для керування версіями
+- **File I/O:** `System.IO`
+- **Git / GitHub** for version control
 
-## 👤 Автор
+## 👤 Author
 
-**_Краснікова Катерина_**
+**_Kate Krasnikova_**
 GitHub: [@kskrasssss](https://github.com/kskrasssss)
 
-## ⬇️ Як завантажити
+## ⬇️ Download
 
-**Через Git:**
+**With Git:**
 
 ```bash
 git clone https://github.com/kskrasssss/csharp-lab5-LINQ-and-Collections-Practice
 ```
 
-**Без Git:** на сторінці репозиторію натисни **Code → Download ZIP**, розпакуй архів і відкрий папку в терміналі.
+**Without Git:** on the repository page click **Code → Download ZIP**, extract the archive and open the folder in a terminal.
 
-## ▶️ Як запустити
+## ▶️ Run
 
-1. Встанови [.NET SDK 6.0 або новіше](https://dotnet.microsoft.com/download).
-2. Перевір версію:
+1. Install the [.NET SDK 6.0 or newer](https://dotnet.microsoft.com/download).
+2. Check the version:
 ```bash
    dotnet --version
 ```
-3. Зі свого каталогу проєкту (де лежить файл `.csproj`) виконай:
+3. From the project directory (the one containing the `.csproj` file) run:
 ```bash
    dotnet build
    dotnet run
 ```
 
-> ⚠️ Запускай саме з кореня проєкту, бо вхідні файли програма шукає за відносним шляхом `Data/`.
+> ⚠️ Run the app from the project root, because the input files are located via the relative path `Data/`.
 
-## 🖥 Використання
+## 🖥 Usage
 
-Після запуску з'явиться меню. Введи номер модуля й натисни Enter:
+After launch a menu appears. Enter a module number and press Enter. The console text is in Ukrainian:
 
-```text
-=== Меню ===
-1 - Generic StorageManager<BankAccount>
-2 - Списки (L1, L2 -> L3)
-3 - Двонаправлений словник
-4 - LINQ: базові запити
-5 - LINQ: агрегація та з'єднання
-0 - Вихід
-```
+| Input | Module |
+|-------|--------|
+| `1` | Generic `StorageManager<BankAccount>` |
+| `2` | Lists (L1, L2 → L3) |
+| `3` | Bi-directional dictionary |
+| `4` | LINQ: basic queries |
+| `5` | LINQ: aggregation and joins |
+| `0` | Exit |
 
-### Вхідні файли
+### Input files
 
-| Файл | Формат |
+| File | Format |
 |------|--------|
-| `Data/task2_input.txt` | Рядок 1: перший список слів, рядок 2: другий. Слова з великих латинських літер через пробіл |
-| `Data/task3_input.txt` | По одній парі `ключ;значення` в рядку |
+| `Data/task2_input.txt` | Line 1: the first word list, line 2: the second. Words are uppercase Latin letters separated by spaces |
+| `Data/task3_input.txt` | One `key;value` pair per line |
 
-Результат модуля **Lists** зберігається у `Data/task2_output.txt`.
+The **Lists** module writes its result to `Data/task2_output.txt`.
 
-## 📁 Структура
+## 📁 Project structure
 
 ```text
-├── Program.cs              # точка входу та меню
+├── Program.cs              # entry point and menu
 ├── Models/                 # BankAccount, BankBranch
-├── Data/                   # тестові дані та вхідні файли
+├── Data/                   # sample data and input files
 ├── Task1/                  # StorageManager<T>
-├── Task2/                  # робота зі списками
-├── Task3/                  # двонаправлений словник
-├── Task4/                  # LINQ: базові запити
-└── Task5/                  # LINQ: групування та з'єднання
+├── Task2/                  # list processing
+├── Task3/                  # bi-directional dictionary
+├── Task4/                  # LINQ: basic queries
+└── Task5/                  # LINQ: grouping and joins
 ```
 
-## 📝 Ліцензія
+## 📝 License
 
-Проєкт створено в навчальних цілях. Використовуй вільно.
+Created for educational purposes. Feel free to use it.
