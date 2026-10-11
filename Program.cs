@@ -18,6 +18,7 @@ while (true)
         case "1": Task1Demo.Run(); break;
         case "2": Task2Demo.Run(); break;
         case "3": Task3Demo.Run(); break;
+        case "4": Task4Demo.Run(); break;
         case "0": return;
         default: Console.WriteLine("Невірний вибір"); break;
     }
