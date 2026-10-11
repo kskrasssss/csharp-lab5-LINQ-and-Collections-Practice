@@ -1,4 +1,4 @@
-namespace Lab5;
+namespace Lab_5;
 
 public static class SampleData
 {
